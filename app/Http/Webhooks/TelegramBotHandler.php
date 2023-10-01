@@ -2,7 +2,7 @@
 
 namespace App\Http\Webhooks;
 
-class DefaultHandler extends \DefStudio\Telegraph\Handlers\WebhookHandler
+class TelegramBotHandler extends \DefStudio\Telegraph\Handlers\WebhookHandler
 {
     public function start(): void
     {
