@@ -30,12 +30,13 @@ class AuthController extends Controller
         }
 
         parse_str($request->initData, $initData);
+        $tgUserData = json_decode($initData['user'] ?? '', true);
 
-        if (!isset($initData['user']['id']) || empty($initData['user']['id'])) {
+        if (!isset($tgUserData['id']) || empty($tgUserData['id'])) {
             abort(403);
         }
 
-        $user = $this->service->createOrGetExistingUser((string)$initData['user']['id']);
+        $user = $this->service->createOrGetExistingUser((string)$tgUserData['id']);
         Auth::login($user);
 
         return redirect(route('tasks.index'));

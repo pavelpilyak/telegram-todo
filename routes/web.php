@@ -15,9 +15,12 @@ use Inertia\Inertia;
 |
 */
 
-Route::get('/auth', [AuthController::class, 'prepare'])->name('auth.prepare');
-Route::post('/auth', [AuthController::class, 'login'])->name('auth.login');
+Route::get('/auth', [AuthController::class, 'prepare'])->name('login');
+Route::post('/auth', [AuthController::class, 'login']);
 
-Route::get('/tasks', function () {
-    return Inertia::render('Auth/Login');
-})->name('tasks.index');
+// Available only for authenticated users
+Route::middleware('auth')->group(function () {
+    Route::get('/tasks', function () {
+        return Inertia::render('Auth/Login', ['userId' => auth()->user()->id]);
+    })->name('tasks.index');
+});
