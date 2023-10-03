@@ -13,7 +13,8 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('telegram_id');
+            $table->string('telegram_user_id');
+            $table->string('chat_id');
             $table->timestamps();
         });
     }

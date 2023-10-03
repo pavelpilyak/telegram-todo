@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
-use Inertia\Inertia;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,8 +14,5 @@ use Inertia\Inertia;
 |
 */
 
-Route::get('/auth', [AuthController::class, 'login'])->name('login');
-
-Route::get('/', function () {
-    return Inertia::render('Welcome');
-});
+Route::get('/auth', [AuthController::class, 'login'])->name('auth.prepare');
+Route::post('/auth', [AuthController::class, 'login'])->name('auth.login');

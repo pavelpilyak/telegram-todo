@@ -10,12 +10,7 @@ class TelegramBotHandler extends \DefStudio\Telegraph\Handlers\WebhookHandler
     public function start(): void
     {
         $this->chat
-            ->html('hi')
-            ->keyboard(
-                Keyboard::make()->buttons([
-                    Button::make('My To-Do')->loginUrl(route('login')),
-                ])
-            )
+            ->html('To open your To-Do list, press the "My To-Do" button')
             ->send();
     }
 }
