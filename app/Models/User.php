@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class User extends Model
 {
-    protected $fillable = ['telegram_user_id', 'chat_id'];
+    protected $fillable = ['telegram_user_id'];
 }

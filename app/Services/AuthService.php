@@ -2,11 +2,27 @@
 
 namespace App\Services;
 
+use App\Models\User;
+
 class AuthService
 {
     /**
+     * Creates user or updates chat_id in user's entity.
+     *
+     * @param string $userId  User's ID in Telegram
+     *
+     * @return User           Created or updated user
+     */
+    public function createOrGetExistingUser(string $userId): User
+    {
+        return User::firstOrCreate(['telegram_user_id' => $userId]);
+    }
+
+    /**
      * Validates initData to ensure that it is valid initialization data.
+     *
      * @param string $initData  Initialization data (`Telegram.WebApp.initData`)
+     *
      * @return bool             True if data is valid and false otherwise
      */
     public function isInitDataValid(string $initData): bool
@@ -20,7 +36,9 @@ class AuthService
 
     /**
      * Converts init data to `key=value` and sort it alphabetically.
+     *
      * @param string $initData  Initialization data (`Telegram.WebApp.initData`)
+     *
      * @return string[]         Hash and sorted init data
      */
     protected function convertInitDataForValidCheck(string $initData): array

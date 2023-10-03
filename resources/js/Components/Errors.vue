@@ -3,7 +3,13 @@
 </script>
 
 <template>
-    <p v-for="key in Object.keys(errors || {})">
+    <p class="error" v-for="key in Object.keys(errors || {})" :key="key">
         {{ errors[key] }}
     </p>
 </template>
+
+<style>
+    .error {
+        color: red;
+    }
+</style>
