@@ -26,6 +26,8 @@ export const sortTasksByDate = (tasks, timezone, isArchive) => {
             } else {
                 key = date.format('MMM D[,] dddd');
             }
+
+            task.time = date.format('HH:mm');
         }
 
         if (sorted[key]) {

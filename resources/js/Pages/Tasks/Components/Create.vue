@@ -65,7 +65,7 @@
         <TextInput label="Task Description" @input="handleDescriptionInput" :value="form.description" />
         <div>
             <Label>Notification Date</Label>
-            <VueDatePicker v-model="form.notify_at" :teleport="true" :format="notifyAtFormat" time-picker-inline />
+            <VueDatePicker v-model="form.notify_at" :teleport="true" teleport-center :format="notifyAtFormat" time-picker-inline />
         </div>
         <Errors :errors="errors" />
         <template v-slot:actionButton>

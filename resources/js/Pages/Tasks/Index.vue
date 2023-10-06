@@ -40,6 +40,7 @@
             </li>
         </ul>
         <Create />
+        <p v-if="tasks.length === 0" class="text-lg">There's nothing here yet. To add a task, click "Add new task"</p>
         <DayTasks :date="date" :tasks="tasks" v-for="[date, tasks] in sortTasksByDate(tasks, timezone, isArchive)" />
     </div>
 </template>
