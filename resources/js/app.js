@@ -1,5 +1,8 @@
 import { createApp, h } from 'vue';
 import { createInertiaApp } from '@inertiajs/vue3';
+import '@vuepic/vue-datepicker/dist/main.css';
+import 'vue-toast-notification/dist/theme-sugar.css';
+import '../css/app.css';
 
 createInertiaApp({
   resolve: name => {

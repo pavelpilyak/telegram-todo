@@ -11,7 +11,7 @@ class TelegramBotHandler extends \DefStudio\Telegraph\Handlers\WebhookHandler
     public function start(): void
     {
         $authService = new AuthService();
-        // chat_id is the user's ID in this case
+        // chat_id is the user's ID in this case, because thats how Telegraph package works
         $authService->createOrGetExistingUser($this->chat->chat_id);
 
         $this->chat->message('To open your To-Do list, press the "My To-Do" button')->send();

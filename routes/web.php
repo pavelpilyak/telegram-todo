@@ -1,8 +1,8 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\TaskController;
 use Illuminate\Support\Facades\Route;
-use Inertia\Inertia;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,12 +15,12 @@ use Inertia\Inertia;
 |
 */
 
-Route::get('/auth', [AuthController::class, 'prepare'])->name('login');
-Route::post('/auth', [AuthController::class, 'login']);
+Route::get('auth', [AuthController::class, 'prepare'])->name('login');
+Route::post('auth', [AuthController::class, 'login']);
 
 // Available only for authenticated users
 Route::middleware('auth')->group(function () {
-    Route::get('/tasks', function () {
-        return Inertia::render('Auth/Login', ['userId' => auth()->user()->id]);
-    })->name('tasks.index');
+    Route::resource('tasks', TaskController::class)->except('create', 'edit', 'show', 'update');
+    Route::post('tasks/{task}/restore', [TaskController::class, 'restore'])->withTrashed();
+    Route::get('tasks/archive', [TaskController::class, 'archive']);
 });

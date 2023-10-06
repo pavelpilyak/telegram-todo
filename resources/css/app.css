@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/** Rewriting transparent background for datepicker */
+.dp__action_select {
+    background-color: var(--dp-primary-color);
+}

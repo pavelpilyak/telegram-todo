@@ -14,5 +14,7 @@
 </script>
 
 <template>
-    <Errors :errors="errors" />
+    <div class="p-2">
+        <Errors :errors="errors" />
+    </div>
 </template>
