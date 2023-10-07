@@ -19,7 +19,7 @@ export const sortTasksByDate = (tasks, timezone, isArchive) => {
         let key = 'Anytime';
 
         if (task.notify_at) {
-            const date = dayjs.tz(task.notify_at, timezone);
+            const date = dayjs.tz(task.notify_at, timezone).tz(dayjs.tz.guess());
 
             if (!isArchive && date.isBefore(dayjs(), 'day')) {
                 key = 'Overdue';
