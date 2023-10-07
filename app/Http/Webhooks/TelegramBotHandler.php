@@ -2,8 +2,8 @@
 
 namespace App\Http\Webhooks;
 
-use App\Service\WebhookHandlerService;
 use App\Services\AuthService;
+use App\Services\WebhookHandlerService;
 use Illuminate\Support\Stringable;
 
 class TelegramBotHandler extends \DefStudio\Telegraph\Handlers\WebhookHandler
