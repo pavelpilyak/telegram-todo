@@ -56,7 +56,7 @@
 <template>
     <button
         @click="isModalOpen = true"
-        class="fixed bottom-4 right-4 p-0 w-12 h-12 bg-gray-600 rounded-full hover:bg-gray-700 active:shadow-lg mouse shadow transition ease-in duration-200 focus:outline-none"
+        class="fixed bottom-4 right-4 p-0 w-12 h-12 bg-gray-600 rounded-full hover:bg-blue-950 hover:text-white active:shadow-lg mouse shadow transition ease-in duration-200 focus:outline-none tgButtonColor tgButtonTextColor"
     >
         <svg viewBox="0 0 20 20" enable-background="new 0 0 20 20" class="w-6 h-6 inline-block">
             <path fill="#FFFFFF" d="M16,10c0,0.553-0.048,1-0.601,1H11v4.399C11,15.951,10.553,16,10,16c-0.553,0-1-0.049-1-0.601V11H4.601
@@ -76,7 +76,7 @@
             <button
                 @click="handleSubmit"
                 type="button"
-                class="inline-flex w-full justify-center rounded-md bg-gray-100 px-3 py-2 text-sm font-semibold text-black shadow-sm hover:bg-gray-300 sm:ml-3 sm:w-auto"
+                class="inline-flex w-full justify-center rounded-md bg-gray-100 px-3 py-2 text-sm font-semibold text-black shadow-sm hover:bg-blue-950 hover:text-white sm:ml-3 sm:w-auto tgButtonColor tgButtonTextColor"
             >
                 Add
             </button>
