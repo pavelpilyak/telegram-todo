@@ -14,7 +14,7 @@
         <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
             <div class="flex min-h-full items-center justify-center p-4 text-center sm:items-center sm:p-0">
                 <div
-                    class="relative transform overflow-hidden rounded-lg bg-gray-800 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg"
+                    class="relative transform overflow-hidden rounded-lg text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg"
                 >
                     <div class="bg-gray-800 px-4 pb-4 pt-5 sm:p-6 sm:pb-4 text-white">
                         <div class="flex flex-col gap-4">
@@ -25,7 +25,7 @@
                         <slot name="actionButton" />
                         <button
                             type="button"
-                            class="mt-3 m-l-auto inline-flex w-full justify-center rounded-md bg-gray-600 px-3 py-2 text-sm font-semibold text-white shadow-sm ring-1 ring-inset ring-gray-700 hover:bg-gray-700 sm:mt-0 sm:w-auto"
+                            class="mt-3 m-l-auto inline-flex w-full justify-center rounded-md bg-transparent px-3 py-2 text-sm font-semibold text-white hover:bg-gray-200 hover:text-black sm:mt-0 sm:w-auto"
                             @click="close"
                         >
                             Cancel

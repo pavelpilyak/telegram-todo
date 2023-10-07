@@ -17,7 +17,7 @@
         <Label v-if="label">{{ label }}</Label>
         <div class="relative">
             <input
-                class="px-2 h-10 leading-normal block w-full text-gray-800 bg-gray-100 border border-gray-300 font-sans rounded text-left appearance-none outline-none"
+                class="px-2 h-9 leading-normal block w-full text-gray-800 bg-gray-100 font-sans rounded text-left appearance-none outline-none"
                 :placeholder="placeholder"
                 :type="type"
                 :value="value"

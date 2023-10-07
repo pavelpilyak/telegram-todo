@@ -10,7 +10,10 @@ class TaskService
 {
     public function getAll(bool $onlyTrashed = false)
     {
-        $tasks = Task::where('user_id', auth()->user()->id)->orderBy('notify_at');
+        $tasks = Task::where('user_id', auth()->user()->id)
+            // minus to put nulls in first place
+            ->orderByRaw(($onlyTrashed ? '-' : '') . 'notify_at asc')
+            ->orderBy('deleted_at', 'desc');
 
         if ($onlyTrashed) {
             $tasks = $tasks->onlyTrashed();

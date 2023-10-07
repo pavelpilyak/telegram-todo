@@ -55,24 +55,28 @@
 
 <template>
     <button
-        class="bg-gray-600 shadow-xl hover:bg-gray-700 text-white font-bold rounded-full p-2 w-48"
         @click="isModalOpen = true"
+        class="fixed bottom-4 right-4 p-0 w-12 h-12 bg-gray-600 rounded-full hover:bg-gray-700 active:shadow-lg mouse shadow transition ease-in duration-200 focus:outline-none"
     >
-        Add new task
+        <svg viewBox="0 0 20 20" enable-background="new 0 0 20 20" class="w-6 h-6 inline-block">
+            <path fill="#FFFFFF" d="M16,10c0,0.553-0.048,1-0.601,1H11v4.399C11,15.951,10.553,16,10,16c-0.553,0-1-0.049-1-0.601V11H4.601
+                                    C4.049,11,4,10.553,4,10c0-0.553,0.049-1,0.601-1H9V4.601C9,4.048,9.447,4,10,4c0.553,0,1,0.048,1,0.601V9h4.399
+                                    C15.952,9,16,9.447,16,10z" />
+        </svg>
     </button>
 
     <Modal :isOpen="isModalOpen" @close="isModalOpen = false">
         <TextInput label="Task Description" @input="handleDescriptionInput" :value="form.description" />
         <div>
             <Label>Notification Date</Label>
-            <VueDatePicker v-model="form.notify_at" :teleport="true" teleport-center :format="notifyAtFormat" time-picker-inline />
+            <VueDatePicker v-model="form.notify_at" dark :teleport="true" teleport-center :format="notifyAtFormat" time-picker-inline />
         </div>
         <Errors :errors="errors" />
         <template v-slot:actionButton>
             <button
                 @click="handleSubmit"
                 type="button"
-                class="inline-flex w-full justify-center rounded-md bg-green-800 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-green-900 sm:ml-3 sm:w-auto"
+                class="inline-flex w-full justify-center rounded-md bg-gray-100 px-3 py-2 text-sm font-semibold text-gray-90 shadow-sm hover:bg-gray-300 sm:ml-3 sm:w-auto"
             >
                 Add
             </button>

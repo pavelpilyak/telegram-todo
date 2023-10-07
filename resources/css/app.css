@@ -2,7 +2,54 @@
 @tailwind components;
 @tailwind utilities;
 
-/** Rewriting transparent background for datepicker */
+/**
+ * Datepicker component
+ */
+
+/** Fixes background (which is broken by Tailwind's reset styles) in datepicker's "Select" button */
 .dp__action_select {
     background-color: var(--dp-primary-color);
+}
+
+/** Datepicker input */
+.dp__input {
+    background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+}
+
+.dp__theme_dark {
+    --dp-background-color: rgb(31 41 55);
+    --dp-hover-color: rgb(17 24 39);
+    --dp-primary-color: rgb(17 24 39);
+ }
+
+/**
+ * Current user's colors in Telegram
+ */
+
+.tgBgColor {
+    background-color: var(--tg-theme-bg-color);
+}
+
+.tgSecondaryBgColor {
+    background-color: var(--tg-theme-secondary-bg-color);
+}
+
+.tgTextColor {
+    color: var(--tg-theme-text-color);
+}
+
+.tgHintColor {
+    color: var(--tg-theme-hint-color);
+}
+
+.tgLinkColor {
+    color: var(--tg-theme-link-color);
+}
+
+.tgButtonColor {
+    background-color: var(--tg-theme-button-color);
+}
+
+.tgButtonTextColor {
+    color: var(--tg-theme-button-text-color);
 }

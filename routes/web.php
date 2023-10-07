@@ -15,8 +15,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('auth', [AuthController::class, 'prepare'])->name('login');
-Route::post('auth', [AuthController::class, 'login']);
+Route::middleware('guest')->group(function () {
+    Route::get('auth', [AuthController::class, 'prepare'])->name('login');
+    Route::post('auth', [AuthController::class, 'login']);
+});
 
 // Available only for authenticated users
 Route::middleware('auth')->group(function () {
