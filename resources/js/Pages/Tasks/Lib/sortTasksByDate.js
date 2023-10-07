@@ -23,11 +23,13 @@ export const sortTasksByDate = (tasks, timezone, isArchive) => {
 
             if (!isArchive && date.isBefore(dayjs(), 'day')) {
                 key = 'Overdue';
+
+                task.time = date.format('MMM D [at] HH:mm');
             } else {
                 key = date.format('MMM D[,] dddd');
-            }
 
-            task.time = date.format('HH:mm');
+                task.time = date.format('[at] HH:mm');
+            }
         }
 
         if (sorted[key]) {

@@ -30,7 +30,7 @@
                 </svg>
             </span>
             <span class="ml-4 text-sm">{{ task.description }}</span>
-            <span v-if="task.time" class="ml-1 text-xs text-gray-400">(at {{ task.time }})</span>
+            <span v-if="task.time" class="ml-1 text-xs text-gray-400">({{ task.time }})</span>
         </label>
     </div>
 </template>
