@@ -17,7 +17,7 @@ class TaskController extends Controller
     }
 
     /**
-     * Display a listing of the resource.
+     * Render page with all user's tasks.
      */
     public function index()
     {
@@ -28,7 +28,7 @@ class TaskController extends Controller
     }
 
     /**
-     * todo
+     * Render page with all user's archived (done) tasks.
      */
     public function archive()
     {
@@ -39,7 +39,7 @@ class TaskController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created task in database.
      */
     public function store(Request $request)
     {
@@ -51,7 +51,7 @@ class TaskController extends Controller
     }
 
     /**
-     * Restores the specified resource in storage.
+     * Restore the specified task in database.
      */
     public function restore(Task $task)
     {
@@ -60,7 +60,7 @@ class TaskController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Check the specified task as done in database.
      */
     public function destroy(Task $task)
     {

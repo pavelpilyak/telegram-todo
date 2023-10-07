@@ -24,7 +24,7 @@
                 <Link
                     href="/tasks"
                     :only="['tasks']"
-                    :class="`block border-primary-400 border-b-2 px-7 pb-3.5 pt-4 text-xs font-medium uppercase leading-tight text-neutral-500 hover:bg-blue-600 hover:text-white focus:isolate focus:border-transparent text-primary-400 ${isArchive ? 'border-transparent' : ''} tgButtonColor tgButtonTextColor`"
+                    :class="`block border-primary-400 border-b-2 px-7 pb-3.5 pt-4 text-xs font-medium uppercase leading-tight text-neutral-500 hover:bg-blue-400 hover:text-white focus:isolate focus:border-transparent text-primary-400 ${isArchive ? 'border-transparent' : ''} tgButtonColor tgButtonTextColor`"
                 >
                     Active
                 </Link>
@@ -33,7 +33,7 @@
                 <Link
                     href="/tasks/archive"
                     :only="['tasks']"
-                    :class="`block border-x-0 border-b-2 border-t-0 px-7 pb-3.5 pt-4 text-xs font-medium uppercase leading-tight text-neutral-500 hover:bg-blue-600 hover:text-white focus:isolate focus:border-transparent  ${!isArchive ? 'border-transparent' : ''} tgButtonColor tgButtonTextColor`"
+                    :class="`block border-x-0 border-b-2 border-t-0 px-7 pb-3.5 pt-4 text-xs font-medium uppercase leading-tight text-neutral-500 hover:bg-blue-400 hover:text-white focus:isolate focus:border-transparent  ${!isArchive ? 'border-transparent' : ''} tgButtonColor tgButtonTextColor`"
                 >
                     Archive
                 </Link>

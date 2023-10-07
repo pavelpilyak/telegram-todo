@@ -10,7 +10,10 @@ use DefStudio\Telegraph\Models\TelegraphChat;
 
 class NotificationService
 {
-    public function notifyAboutTaskExpiration()
+    /**
+     * Sends task description messages if notify_at is now
+     */
+    public function notifyAboutTaskExpiration(): void
     {
         $notifiableTasks = Task::with('user')
             ->where('notify_at', Carbon::now()->format('Y-m-d H:i:00'))

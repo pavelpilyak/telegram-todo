@@ -11,7 +11,7 @@ class AuthService
      *
      * @param string $userId  User's ID in Telegram
      *
-     * @return User           Created or updated user
+     * @return User Created or updated user
      */
     public function createOrGetExistingUser(string $userId): User
     {
@@ -23,7 +23,7 @@ class AuthService
      *
      * @param string $initData  Initialization data (`Telegram.WebApp.initData`)
      *
-     * @return bool             True if data is valid and false otherwise
+     * @return bool True if data is valid and false otherwise
      */
     public function isInitDataValid(string $initData): bool
     {
@@ -39,7 +39,7 @@ class AuthService
      *
      * @param string $initData  Initialization data (`Telegram.WebApp.initData`)
      *
-     * @return string[]         Hash and sorted init data
+     * @return string[] Hash and sorted init data
      */
     protected function convertInitDataForValidCheck(string $initData): array
     {
