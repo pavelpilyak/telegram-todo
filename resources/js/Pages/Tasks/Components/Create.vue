@@ -76,7 +76,7 @@
             <button
                 @click="handleSubmit"
                 type="button"
-                class="inline-flex w-full justify-center rounded-md bg-gray-100 px-3 py-2 text-sm font-semibold text-gray-90 shadow-sm hover:bg-gray-300 sm:ml-3 sm:w-auto"
+                class="inline-flex w-full justify-center rounded-md bg-gray-100 px-3 py-2 text-sm font-semibold text-black shadow-sm hover:bg-gray-300 sm:ml-3 sm:w-auto"
             >
                 Add
             </button>
