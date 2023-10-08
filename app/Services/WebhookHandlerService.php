@@ -4,22 +4,20 @@ namespace App\Services;
 
 use App\Models\Task;
 use App\Models\User;
-use DefStudio\Telegraph\Facades\Telegraph;
 
 class WebhookHandlerService
 {
     /**
      * Check specific task as done and removes "Done" button from chat message.
      *
-     * @param int $taskId    ID of task
-     * @param int $chatId    ID of chat
-     * @param int $messageId ID of chat message
+     * @param int $taskId  ID of task
+     * @param int $chatId  ID of chat
      *
      * @throws \Throwable
      */
-    public function checkTaskAsDone(int $taskId, string $userId, int $messageId)
+    public function checkTaskAsDone(int $taskId, string $chatId)
     {
-        $user = User::where('telegram_user_id', $userId)->firstOrFail();
+        $user = User::where('telegram_user_id', $chatId)->firstOrFail();
 
         $taskService = new TaskService();
         $taskService->delete(
@@ -28,7 +26,5 @@ class WebhookHandlerService
                 ->where('id', $taskId)
                 ->firstOrFail()
         );
-
-        Telegraph::deleteKeyboard(messageId: $messageId)->send();
     }
 }

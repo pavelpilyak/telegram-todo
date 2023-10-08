@@ -52,6 +52,8 @@ class TelegramBotHandler extends \DefStudio\Telegraph\Handlers\WebhookHandler
         $chatId = $this->chat->chat_id;
         $messageId = $this->callbackQuery->message()->id();
 
-        $this->service->checkTaskAsDone((int)$id, $chatId, $messageId);
+        $this->service->checkTaskAsDone((int)$id, $chatId);
+
+        $this->chat->deleteKeyboard($messageId);
     }
 }
