@@ -21,8 +21,7 @@ class WebhookHandlerService
 
         $taskService = new TaskService();
         $taskService->delete(
-            Task::withTrashed()
-                ->where('user_id', $user->id)
+            Task::where('user_id', $user->id)
                 ->where('id', $taskId)
                 ->firstOrFail()
         );
