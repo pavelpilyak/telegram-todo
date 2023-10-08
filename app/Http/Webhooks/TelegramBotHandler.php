@@ -46,11 +46,12 @@ class TelegramBotHandler extends \DefStudio\Telegraph\Handlers\WebhookHandler
     /**
      * Method which is called than user clicks on 'Done' button under notification message.
      */
-    public function checkAsDone()
+    public function checkAsDone(): void
     {
         $id = $this->data->get('id');
+        $chatId = $this->chat->chat_id;
         $messageId = $this->callbackQuery->message()->id();
 
-        $this->service->checkTaskAsDone((int)$id, $this->chat->chat_id, $messageId);
+        $this->service->checkTaskAsDone((int)$id, $chatId, $messageId);
     }
 }

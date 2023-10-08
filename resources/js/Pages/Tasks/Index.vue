@@ -41,7 +41,7 @@
         <Create />
         <div v-if="tasks.length === 0" class="p-2 text-lg">
             <p>There's nothing here yet</p>
-            <p v-if="!isArchive" class="p-2 text-lg">To add a task, click the button on the bottom right</p>
+            <p v-if="!isArchive">To add a task, click the button on the bottom right</p>
         </div>
         <Tasks :date="date" :tasks="tasks" v-for="[date, tasks] in sortTasksByDate(tasks, timezone, isArchive)" />
     </div>

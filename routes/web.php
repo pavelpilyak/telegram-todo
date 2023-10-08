@@ -15,10 +15,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('guest')->group(function () {
-    Route::get('auth', [AuthController::class, 'prepare'])->name('login');
-    Route::post('auth', [AuthController::class, 'login']);
-});
+// This group can be wrapped into `Route::middleware('guest')`,
+// but if you have two or more telegram accounts in one app,
+// you gonna authorize with the same account, because it's the same session.
+// To prevent it, we need to authorize user every time he steps to /auth.
+Route::get('auth', [AuthController::class, 'prepare'])->name('login');
+Route::post('auth', [AuthController::class, 'login']);
 
 // Available only for authenticated users
 Route::middleware('auth')->group(function () {
