@@ -56,7 +56,7 @@
 <template>
     <button
         @click="isModalOpen = true"
-        class="fixed createButton right-4 p-0 w-12 h-12 bg-gray-600 rounded-full hover:bg-blue-300 hover:text-white active:shadow-lg mouse shadow transition ease-in duration-200 focus:outline-none tgButtonColor tgButtonTextColor"
+        class="fixed createButton right-8 p-0 w-12 h-12 bg-gray-600 rounded-full hover:bg-blue-300 hover:text-white active:shadow-lg mouse shadow transition ease-in duration-200 focus:outline-none tgButtonColor tgButtonTextColor"
     >
         <svg viewBox="0 0 20 20" enable-background="new 0 0 20 20" class="w-6 h-6 inline-block">
             <path fill="#FFFFFF" d="M16,10c0,0.553-0.048,1-0.601,1H11v4.399C11,15.951,10.553,16,10,16c-0.553,0-1-0.049-1-0.601V11H4.601
@@ -86,6 +86,6 @@
 
 <style scoped>
     .createButton {
-        top: calc(var(--tg-viewport-height) - 60px); /** 60 is button height + 12px padding */
+        top: calc(var(--tg-viewport-height) - 72px); /** 72 is button height + 24px padding */
     }
 </style>
