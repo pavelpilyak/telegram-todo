@@ -9,7 +9,7 @@
         timezone: String, // Server timezone to calculate time on user side
     });
 
-    const isArchive = router.page.url !== '/tasks';
+    const isArchive = router.page.url.includes('/tasks/archive');
 </script>
 
 <template>
@@ -23,7 +23,7 @@
                 <Link
                     href="/tasks"
                     :only="['tasks']"
-                    :class="`block border-primary-400 border-b-2 px-7 pb-3.5 pt-4 text-xs font-medium uppercase leading-tight text-neutral-500 hover:bg-blue-400 hover:text-white focus:isolate focus:border-transparent text-primary-400 ${isArchive ? 'border-transparent' : ''} tgButtonColor tgButtonTextColor`"
+                    :class="`block border-primary-400 border-b-2 px-7 pb-3.5 pt-4 text-xs font-medium uppercase leading-tight text-neutral-500 hover:bg-blue-300 hover:text-white focus:isolate focus:border-transparent text-primary-400 ${isArchive ? 'border-transparent' : ''} tgButtonColor tgButtonTextColor`"
                 >
                     Active
                 </Link>
@@ -32,15 +32,15 @@
                 <Link
                     href="/tasks/archive"
                     :only="['tasks']"
-                    :class="`block border-x-0 border-b-2 border-t-0 px-7 pb-3.5 pt-4 text-xs font-medium uppercase leading-tight text-neutral-500 hover:bg-blue-400 hover:text-white focus:isolate focus:border-transparent  ${!isArchive ? 'border-transparent' : ''} tgButtonColor tgButtonTextColor`"
+                    :class="`block border-x-0 border-b-2 border-t-0 px-7 pb-3.5 pt-4 text-xs font-medium uppercase leading-tight text-neutral-500 hover:bg-blue-300 hover:text-white focus:isolate focus:border-transparent  ${!isArchive ? 'border-transparent' : ''} tgButtonColor tgButtonTextColor`"
                 >
                     Archive
                 </Link>
             </li>
         </ul>
         <Create />
-        <p v-if="tasks.length === 0" class="text-lg">There's nothing here yet</p>
-        <p v-if="tasks.length === 0 && !isArchive" class="text-lg">To add a task, click the button on the bottom right</p>
+        <p v-if="tasks.length === 0" class="p-2 text-lg">There's nothing here yet</p>
+        <p v-if="tasks.length === 0 && !isArchive" class="p-2 text-lg">To add a task, click the button on the bottom right</p>
         <Tasks :date="date" :tasks="tasks" v-for="[date, tasks] in sortTasksByDate(tasks, timezone, isArchive)" />
     </div>
 </template>
