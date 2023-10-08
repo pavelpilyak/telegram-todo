@@ -1,13 +1,12 @@
 <script setup>
     import { Link, router } from '@inertiajs/vue3';
     import Create from './Components/Create.vue';
-    import DayTasks from './Components/DayTasks.vue';
+    import Tasks from './Components/Tasks.vue';
     import { sortTasksByDate } from './Lib/sortTasksByDate';
 
     const { tasks, timezone } = defineProps({
-        errors: Object,
         tasks: Array,
-        timezone: String,
+        timezone: String, // Server timezone to calculate time on user side
     });
 
     const isArchive = router.page.url !== '/tasks';
@@ -42,6 +41,6 @@
         <Create />
         <p v-if="tasks.length === 0" class="text-lg">There's nothing here yet</p>
         <p v-if="tasks.length === 0 && !isArchive" class="text-lg">To add a task, click the button on the bottom right</p>
-        <DayTasks :date="date" :tasks="tasks" v-for="[date, tasks] in sortTasksByDate(tasks, timezone, isArchive)" />
+        <Tasks :date="date" :tasks="tasks" v-for="[date, tasks] in sortTasksByDate(tasks, timezone, isArchive)" />
     </div>
 </template>

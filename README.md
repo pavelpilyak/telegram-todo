@@ -4,7 +4,7 @@ This is a [Telegram Mini App](https://core.telegram.org/bots/webapps) which is a
 You can see an example [here](https://t.me/todoomer_bot).
 
 ### Technologies
-The backend is written in [Laravel](https://laravel.com/) using [Inertia](https://inertiajs.com/). Frontend is written in [Vue 3](https://vuejs.org/). [Telegraph](https://github.com/defstudio/telegraph) is used as a framework for writing the bot.
+The backend is written in [Laravel](https://laravel.com/) using [Inertia](https://inertiajs.com/). Frontend is written in [Vue 3](https://vuejs.org/) with [Tailwind](https://tailwindcss.com/). [Telegraph](https://github.com/defstudio/telegraph) is used as a framework for writing the bot.
 
 ## Structure
 [Here's more](https://laravel.com/docs/10.x/lifecycle) about architecture and lifecycle in Laravel.
@@ -76,7 +76,9 @@ php artisan tinker
 ```
 To authenticate under this user you can use this hack: in `app/Http/Controllers/AuthController.php` add this line to `prepare()` method:
 ```
-Auth::loginUsingId(1); // Or use any other existing user's ID
+if (config('app.env') === 'local') {
+    Auth::loginUsingId(1); // Or use any other existing user ID
+}
 ```
 
 ## Potential Problems
