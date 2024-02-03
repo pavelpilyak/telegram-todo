@@ -196,6 +196,6 @@ return [
     |
     */
 
-    'same_site' => 'none',
+    'same_site' => config('app.env') === 'production' ? 'none' : 'lax',
 
 ];
