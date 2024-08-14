@@ -1,8 +1,6 @@
 ## About
 This is a [Telegram Mini App](https://core.telegram.org/bots/webapps) which is a simple To-Do with user authentication and the ability to notify the user about tasks. 
 
-You can see an example [here](https://t.me/todoomer_bot).
-
 ### Technologies
 The backend is written in [Laravel](https://laravel.com/) using [Inertia](https://inertiajs.com/). Frontend is written in [Vue 3](https://vuejs.org/) with [Tailwind](https://tailwindcss.com/). [Telegraph](https://github.com/defstudio/telegraph) is used as a framework for writing the bot.
 
